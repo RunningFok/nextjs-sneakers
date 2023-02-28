@@ -3,16 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-}
-
-module.exports = {
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.stockx.com',
-        port: '',
-      },
-    ],
+    domains: ["images.stockx.com"],
   },
-}
+};
+
+module.exports = nextConfig;
