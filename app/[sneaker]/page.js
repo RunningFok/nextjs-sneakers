@@ -1,4 +1,4 @@
-import FetchSneakerId from "../FetchSneakerId";
+import FetchSneakerId from "../helper/FetchSneakerId";
 import Link from "next/link";
 import Image from "next/image";
 

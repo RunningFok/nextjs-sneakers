@@ -1,12 +1,13 @@
 const SneaksAPI = require("sneaks-api");
 
-export default async function PopularSneakers() {
+export default async function SearchByKeyword({ keyword }) {
   const sneaks = new SneaksAPI();
   return await new Promise((resolve, reject) => {
-    sneaks.getMostPopular(
-      10,
+    sneaks.getProducts(
+      keyword,
+      20,
       function (err, products) {
-        const popularSneakers = [];
+        const sneakersResult = [];
         products.map(function (sneaker) {
           const newSneaker = {};
           newSneaker["styleID"] = sneaker.styleID;
@@ -18,11 +19,11 @@ export default async function PopularSneakers() {
           newSneaker["description"] = sneaker.description;
           newSneaker["thumbnail"] = sneaker.thumbnail;
           console.log(newSneaker);
-          popularSneakers.push(newSneaker);
+          sneakersResult.push(newSneaker);
         });
-        resolve(popularSneakers);
-        console.log(popularSneakers)
-        return popularSneakers;
+        resolve(sneakersResult);
+        console.log(sneakersResult)
+        return sneakersResult;
       },
       (errorResponse) => {
         reject(errorResponse);

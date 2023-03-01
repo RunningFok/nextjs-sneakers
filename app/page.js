@@ -2,11 +2,10 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "./page.module.css";
 import SneakerBox from "./SneakerBox";
-import PopularSneakers from "./PopularSneakers";
+import PopularSneakers from "./helper/PopularSneakers";
 
 export default async function Home() {
   const popularSneakers = await PopularSneakers();
-  console.log(popularSneakers);
   return (
     <main>
       <div className="grid gap-16 grid-cols-fluid">
