@@ -9,7 +9,7 @@ export default async function PopularSneakers() {
         const popularSneakers = [];
         products.map(function (sneaker) {
           const newSneaker = {};
-          newSneaker["id"] = sneaker._id.toString();
+          newSneaker["styleID"] = sneaker.styleID;
           newSneaker["brand"] = sneaker.brand;
           newSneaker["shoeName"] = sneaker.shoeName;
           newSneaker["colorway"] = sneaker.colorway;
@@ -21,6 +21,7 @@ export default async function PopularSneakers() {
           popularSneakers.push(newSneaker);
         });
         resolve(popularSneakers);
+        console.log(popularSneakers)
         return popularSneakers;
       },
       (errorResponse) => {

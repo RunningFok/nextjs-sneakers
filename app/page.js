@@ -1,23 +1,23 @@
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "./page.module.css";
-import Sneaker from "./Sneaker";
+import SneakerBox from "./SneakerBox";
 import PopularSneakers from "./PopularSneakers";
 
 export default async function Home() {
   const popularSneakers = await PopularSneakers();
-  console.log(popularSneakers)
+  console.log(popularSneakers);
   return (
-    <div>
-      <h1>Sneaker Page</h1>
-      {popularSneakers.map((sneaker) => (
-        <Sneaker
-          key={sneaker.id}
-          id={sneaker.id}
-          shoeName={sneaker.shoeName}
-          thumbnail={sneaker.thumbnail}
-        />
-      ))}
-    </div>
+    <main>
+      <div className="grid gap-16 grid-cols-fluid">
+        {popularSneakers.map((sneaker) => (
+          <SneakerBox
+            styleID={sneaker.styleID}
+            shoeName={sneaker.shoeName}
+            thumbnail={sneaker.thumbnail}
+          />
+        ))}
+      </div>
+    </main>
   );
 }
