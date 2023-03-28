@@ -4,7 +4,7 @@ export default async function PopularSneakers() {
   const sneaks = new SneaksAPI();
   return await new Promise((resolve, reject) => {
     sneaks.getMostPopular(
-      6,
+      10,
       function (err, products) {
         const popularSneakers = [];
         products.map(function (sneaker) {
@@ -17,7 +17,6 @@ export default async function PopularSneakers() {
           newSneaker["releaseDate"] = sneaker.releaseDate;
           newSneaker["description"] = sneaker.description;
           newSneaker["thumbnail"] = sneaker.thumbnail;
-          console.log(newSneaker);
           popularSneakers.push(newSneaker);
         });
         resolve(popularSneakers);

@@ -1,12 +1,12 @@
 import SearchByKeyword from "../../helper/SearchByKeyword";
 import SneakerBox from "../../SneakerBox";
 
-export default async function HokaPage() {
-  const nikeList = await SearchByKeyword({ keyword: "Hoka" });
+export default async function NikeAll() {
+  const sneakerList = await SearchByKeyword({ keyword: "Nike" });
   return (
     <main>
       <div className="grid gap-16 grid-cols-fluid">
-        {nikeList.map((sneaker) => (
+        {sneakerList.map((sneaker) => (
           <SneakerBox
             styleID={sneaker.styleID}
             shoeName={sneaker.shoeName}
