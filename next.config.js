@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["images.stockx.com"],
+    domains: ["images.stockx.com", "stockx-assets.imgix.net"],
   },
 };
 

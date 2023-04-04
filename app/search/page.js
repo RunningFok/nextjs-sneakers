@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import SneakerBox from "../SneakerBox";
 
 export default function SearchPage() {
   const [sneakerList, setSneakerList] = useState([]);
@@ -31,30 +32,24 @@ export default function SearchPage() {
 
   console.log("Return Here");
 
-  const allSneakers = sneakerList.map((sneaker) => {
-    console.log(sneaker.styleID);
-    console.log(sneaker.shoeName);
-    console.log(sneaker.thumbnail);
-    return (
-      <div key={sneaker.styleID}>
-        {sneaker.shoeName}
-        <Link href={`/${sneaker.styleID}`}>
-          <Image
-            src={sneaker.thumbnail}
-            alt={sneaker.shoeName}
-            width={200}
-            height={200}
-          />
-        </Link>
-      </div>
-    );
-  });
+
+  const searchedSneakers =   (
+    <div className="grid h-full relative w-full flex-col flex-1 gap-16 mb-12 grid-cols-fluid items-center justify-center p-10 sm:flex-row bg-white">
+      {sneakerList.map((sneaker) => (
+        <SneakerBox
+          styleID={sneaker.styleID}
+          shoeName={sneaker.shoeName}
+          thumbnail={sneaker.thumbnail}
+        />
+      ))}
+    </div>
+  );
 
   return sneakerList === null ? (
     <h1>Loading... </h1>
   ) : (
-    <main>
-      <div className="grid gap-16 grid-cols-fluid">{allSneakers}</div>
-    </main>
+    <div className="flex-1 flex-grow grid gap-16 mb-20 grid-cols-fluid items-center justify-center bg-white">
+      {searchedSneakers}
+    </div>
   );
 }

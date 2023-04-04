@@ -7,16 +7,14 @@ import PopularSneakers from "./helper/PopularSneakers";
 export default async function Home() {
   const popularSneakers = await PopularSneakers();
   return (
-    <main>
-      <div className="grid gap-16 grid-cols-fluid">
-        {popularSneakers.map((sneaker) => (
-          <SneakerBox
-            styleID={sneaker.styleID}
-            shoeName={sneaker.shoeName}
-            thumbnail={sneaker.thumbnail}
-          />
-        ))}
-      </div>
-    </main>
+    <div className="grid h-full relative w-full flex-col flex-1 gap-16 mb-12 grid-cols-fluid items-center justify-center p-10 sm:flex-row bg-white">
+      {popularSneakers.map((sneaker) => (
+        <SneakerBox
+          styleID={sneaker.styleID}
+          shoeName={sneaker.shoeName}
+          thumbnail={sneaker.thumbnail}
+        />
+      ))}
+    </div>
   );
 }

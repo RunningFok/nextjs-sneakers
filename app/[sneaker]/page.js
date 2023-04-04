@@ -6,19 +6,33 @@ export default async function SneakerDetail({ params }) {
   console.log(params);
   const { sneaker } = params;
   const sneakerData = await FetchSneakerId({ styleID: sneaker });
-  return(
-    <div>
-    {sneakerData.shoeName}
-    <Link href={`/${sneakerData.styleID}`}>
-      <Image src={sneakerData.thumbnail} alt={sneakerData.shoeName} width={200} height={200} />
-    </Link>
-    <h2>{sneakerData.brand}</h2>
-    <h2>{sneakerData.colorway}</h2>
-    <h2>{sneakerData.retailPrice}</h2>
-    <h2>{sneakerData.releaseDate}</h2>
-    <p>{sneakerData.description}</p>
+  return (
+    <div className=" bg-white text-black py-8 place-items-center ">
+      <h2 className="text-center font-bold text-2xl">
+        {sneakerData.shoeName}
+      </h2>
 
-</div>
-  )
-
+      <Link href={`/${sneakerData.styleID}`}>
+        <Image
+          className="place-items-center mx-auto"
+          src={sneakerData.thumbnail}
+          alt={sneakerData.shoeName}
+          width={600}
+          height={600}
+        />
+      </Link>
+      <h2 className="text-center font-semibold text-base">
+        Release Date:{sneakerData.releaseDate}
+      </h2>
+      <h2 className="text-center font-semibold text-base">
+        {sneakerData.colorway}
+      </h2>
+      <h2 className="text-center font-semibold text-xl">
+        ${sneakerData.retailPrice}
+      </h2>
+      <p className="text-center font-normal text-sm mx-60">
+        {sneakerData.description}
+      </p>
+    </div>
+  );
 }
