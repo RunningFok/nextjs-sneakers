@@ -4,14 +4,23 @@ A Website made with NextJS and TailwindCSS with API calls with StockX Database s
 Homepage with a list of shoes collected from the StockX API's most searched sneakers of the moment.
 
 
+
 <img width="952" alt="nextSneaker-Dropmenu" src="https://user-images.githubusercontent.com/68723489/230126078-2ffddb0b-78a5-48a3-97cc-95e9eae13aff.png">
 A layout with dropmenu in its layout for ease of navigation through different popular brands and sneaker models
+
+
 
 <img width="952" alt="nextSneaker-SearchResult" src="https://user-images.githubusercontent.com/68723489/230126100-20f1d16d-cf05-4858-b2ef-fca3d725e927.png">
 A search params input in its layout and the search results being generated in the search page
 
+
+
 <img width="959" alt="nextSneaker-DetailPage" src="https://user-images.githubusercontent.com/68723489/230126106-6c252285-eec1-4994-bdfc-255399456e34.png">
 Simple product detail page with its description.
+
+
+
+
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
