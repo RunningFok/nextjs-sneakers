@@ -11,6 +11,8 @@ export default function SearchPage() {
   const search = useSearchParams();
   const searchQuery = search ? search.get("q") : null;
 
+  
+
   async function getData() {
     const response = await fetch(`/api/search?q=${searchQuery}`, {
       next: { revalidate: 10 },
@@ -32,16 +34,20 @@ export default function SearchPage() {
 
   console.log("Return Here");
 
-
-  const searchedSneakers =   (
-    <div className="grid h-full relative w-full flex-col flex-1 gap-16 mb-12 grid-cols-fluid items-center justify-center p-10 sm:flex-row bg-white">
-      {sneakerList.map((sneaker) => (
-        <SneakerBox
-          styleID={sneaker.styleID}
-          shoeName={sneaker.shoeName}
-          thumbnail={sneaker.thumbnail}
-        />
-      ))}
+  const searchedSneakers = (
+    <div>
+      <h2 className="text-black text-center m-20 ui-sans-serif font-bold	text-3xl">
+        Searched for <span className="italic font-black">{searchQuery}</span>
+      </h2>
+      <div className="grid h-full relative w-full flex-col flex-1 gap-16 mb-12 grid-cols-fluid items-center justify-center p-10 sm:flex-row bg-white">
+        {sneakerList.map((sneaker) => (
+          <SneakerBox
+            styleID={sneaker.styleID}
+            shoeName={sneaker.shoeName}
+            thumbnail={sneaker.thumbnail}
+          />
+        ))}
+      </div>
     </div>
   );
 

@@ -6,23 +6,23 @@ import SearchInput from "./helper/SearchBox";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="bg-white min-h-screen flex flex-col ">
+    <html lang="en" className="bg-white">
       {/*
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body class="flex flex-col min-h-screen bg-teal-700">
+      <body class="flex flex-col min-h-screen w-screen bg-teal-700">
         <header className="sticky top-0 z-10 bg-teal-700 text-white">
           <section className="mx-auto flex max-w-4xl items-center justify-between p-4">
             <div className="flex items-center justify-between max-w-7xl mx-auto">
               <nav className="flex items-center w-auto space-x-1 text-l">
-                <h1 class="text-3xl font-medium">
+                <h1 class="text-3xl font-medium ui-sans-serif">
                   <Link href="/"> nextSneaker</Link>
                 </h1>
 
                 <Dropdown>
-                  <Dropdown.Button flat className=" text-white">
+                  <Dropdown.Button flat className=" text-white ui-sans-serif">
                     Nike
                   </Dropdown.Button>
                   <Dropdown.Menu aria-label="Static Actions">
@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
                   </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
-                  <Dropdown.Button flat className=" text-white">
+                  <Dropdown.Button flat className=" text-white ui-sans-serif">
                     Air Jordan
                   </Dropdown.Button>
                   <Dropdown.Menu aria-label="Static Actions">
@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
                   </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
-                  <Dropdown.Button flat className=" text-white">
+                  <Dropdown.Button flat className=" text-white ui-sans-serif">
                     Adidas
                   </Dropdown.Button>
                   <Dropdown.Menu aria-label="Static Actions">
@@ -110,7 +110,7 @@ export default function RootLayout({ children }) {
                   </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown>
-                  <Dropdown.Button flat className=" text-white">
+                  <Dropdown.Button flat className=" text-white ui-sans-serif">
                     Other Sneakers
                   </Dropdown.Button>
                   <Dropdown.Menu aria-label="Static Actions">
@@ -139,10 +139,11 @@ export default function RootLayout({ children }) {
           </section>
         </header>
 
-        <main className="flex-1 w-full flex-grow h-full mx-auto relative bg-white">{children}</main>
-
-        <footer class="container mx-auto flex justify-center flex-col items-center bg-teal-700">
-          <p>&copy; 2023 nextSneaker</p>
+        <main className="flex-1 w-full flex-grow h-full mx-auto relative bg-white">
+          {children}
+        </main>
+        <footer class="mx-auto justify-center w-screen bg-cover bg-repeat items-center py-5 bg-teal-700">
+          <p className="text-center">&copy; 2023 nextSneaker</p>
         </footer>
       </body>
     </html>

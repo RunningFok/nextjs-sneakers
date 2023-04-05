@@ -18,6 +18,7 @@ export default async function SearchByKeyword({ keyword }) {
           newSneaker["releaseDate"] = sneaker.releaseDate;
           newSneaker["description"] = sneaker.description;
           newSneaker["thumbnail"] = sneaker.thumbnail;
+          newSneaker["keyword"] = keyword;
           sneakersResult.push(newSneaker);
         });
         resolve(sneakersResult);
