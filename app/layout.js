@@ -142,9 +142,9 @@ export default function RootLayout({ children }) {
         <main className="flex-1 w-full flex-grow h-full mx-auto relative bg-white">
           {children}
         </main>
-        <footer class="mx-auto justify-center w-screen bg-cover bg-repeat items-center py-5 bg-teal-700">
-          <p className="text-center">&copy; 2023 nextSneaker</p>
-        </footer>
+      <footer className="mx-auto justify-center w-screen bg-cover bg-repeat items-center py-5 bg-teal-700">
+        <p className="text-center">&copy; 2023 nextSneaker</p>
+      </footer>
       </body>
     </html>
   );

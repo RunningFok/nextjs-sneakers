@@ -8,6 +8,10 @@ export default async function SneakerDetail({ params }) {
   const sneakerData = await FetchSneakerId({ styleID: sneaker });
   return (
     <div className=" bg-white text-black py-8 place-items-center ">
+      <title>nextSneaker - {sneaker.shoeName}!</title>
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta name="description" content="Find your next pair of sneakers!" />
+      <link rel="icon" href="/favicon.ico" />
       <h2 className="text-center ui-sans-serif font-bold text-2xl">
         {sneakerData.shoeName}
       </h2>
@@ -30,8 +34,8 @@ export default async function SneakerDetail({ params }) {
       <h2 className="text-center font-semibold text-xl">
         ${sneakerData.retailPrice}
       </h2>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <p className="text-center font-normal text-sm mx-60">
         {sneakerData.description}
       </p>

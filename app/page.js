@@ -8,6 +8,10 @@ export default async function Home() {
   const popularSneakers = await PopularSneakers();
   return (
     <div>
+      <title>nextSneaker - Find your next pair of sneakers!</title>
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta name="description" content="Find your next pair of sneakers!" />
+      <link rel="icon" href="/favicon.ico" />
       <h2 className="text-black text-center m-20 ui-sans-serif font-black	text-7xl">
         Kicks Of The Day
       </h2>

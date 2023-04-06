@@ -1,8 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
 import SneakerBox from "../SneakerBox";
 
 export default function SearchPage() {
@@ -10,8 +8,6 @@ export default function SearchPage() {
 
   const search = useSearchParams();
   const searchQuery = search ? search.get("q") : null;
-
-  
 
   async function getData() {
     const response = await fetch(`/api/search?q=${searchQuery}`, {
@@ -36,7 +32,7 @@ export default function SearchPage() {
 
   const searchedSneakers = (
     <div>
-      <h2 className="text-black text-center m-20 ui-sans-serif font-bold	text-3xl">
+      <h2 className="text-black text-center m-20 ui-sans-serif font-bold text-3xl">
         Searched for <span className="italic font-black">{searchQuery}</span>
       </h2>
       <div className="grid h-full relative w-full flex-col flex-1 gap-16 mb-12 grid-cols-fluid items-center justify-center p-10 sm:flex-row bg-white">
@@ -52,9 +48,19 @@ export default function SearchPage() {
   );
 
   return sneakerList === null ? (
+    <div>
+<title>nextSneaker - {searchQuery}!</title>
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta name="description" content="Find your next pair of sneakers!" />
+      <link rel="icon" href="/favicon.ico" />
     <h1>Loading... </h1>
+    </div>
   ) : (
     <div className="flex-1 flex-grow grid gap-16 mb-20 grid-cols-fluid items-center justify-center bg-white">
+      <title>nextSneaker - {searchQuery}!</title>
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta name="description" content="Find your next pair of sneakers!" />
+      <link rel="icon" href="/favicon.ico" />
       {searchedSneakers}
     </div>
   );
